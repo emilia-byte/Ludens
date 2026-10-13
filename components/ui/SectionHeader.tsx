@@ -6,7 +6,7 @@ type SectionHeaderProps = {
   title: string;
   subtitle?: string;
   eyebrow?: string;
-  tone?: "light" | "night";
+  tone?: "light" | "night" | "marketonline";
   className?: string;
 };
 
@@ -19,10 +19,11 @@ export function SectionHeader({
   className,
 }: SectionHeaderProps) {
   const night = tone === "night";
+  const mo = tone === "marketonline";
   return (
     <div className={cn("max-w-2xl", className)}>
       {eyebrow && (
-        <Eyebrow className={cn("mb-4", night ? "text-signal" : "text-primary")}>
+        <Eyebrow className={cn("mb-4", night ? "text-signal" : mo ? "text-mo-navy" : "text-primary")}>
           {eyebrow}
         </Eyebrow>
       )}
@@ -30,7 +31,7 @@ export function SectionHeader({
         id={id}
         className={cn(
           "text-3xl font-bold tracking-[-0.03em] text-balance sm:text-4xl lg:text-5xl",
-          night ? "text-on-night" : "text-ink",
+          night ? "text-on-night" : mo ? "text-mo-navy" : "text-ink",
         )}
       >
         {title}
@@ -39,7 +40,7 @@ export function SectionHeader({
         <p
           className={cn(
             "mt-4 max-w-[60ch] text-lg leading-relaxed text-pretty",
-            night ? "text-on-night-muted" : "text-ink-muted",
+            night ? "text-on-night-muted" : mo ? "text-mo-slate" : "text-ink-muted",
           )}
         >
           {subtitle}

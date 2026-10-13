@@ -28,7 +28,7 @@ export function CookieBanner() {
               {copy.body}{" "}
               <Link
                 href={site.footer.cookiePolicy.href}
-                className="font-semibold text-accent underline underline-offset-2 hover:text-accent-strong"
+                className="font-semibold text-primary underline underline-offset-2 hover:text-ink"
               >
                 {copy.policyLink}
               </Link>

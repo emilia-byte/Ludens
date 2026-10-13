@@ -29,7 +29,7 @@ export default function CookiePolicyPage() {
           <p className="mt-4 text-sm text-ink-muted">
             Última actualización: {cookiePolicyMeta.lastUpdated}
           </p>
-          <div className="mt-10 text-ink-muted leading-relaxed [&_a]:font-semibold [&_a]:text-accent [&_a]:underline [&_a]:underline-offset-2 [&_h2]:mt-12 [&_h2]:mb-4 [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:tracking-[-0.02em] [&_h2]:text-ink [&_li]:mt-2 [&_p]:mt-4 [&_strong]:text-ink [&_table]:mt-6 [&_table]:w-full [&_table]:text-left [&_table]:text-sm [&_td]:border-t [&_td]:border-line [&_td]:py-3 [&_td]:pr-4 [&_td]:align-top [&_th]:pb-3 [&_th]:pr-4 [&_th]:font-semibold [&_th]:text-ink [&_ul]:mt-4 [&_ul]:list-disc [&_ul]:pl-6">
+          <div className="mt-10 text-ink-muted leading-relaxed [&_a]:font-semibold [&_a]:text-primary [&_a]:underline [&_a]:underline-offset-2 [&_h2]:mt-12 [&_h2]:mb-4 [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:tracking-[-0.02em] [&_h2]:text-ink [&_li]:mt-2 [&_p]:mt-4 [&_strong]:text-ink [&_table]:mt-6 [&_table]:w-full [&_table]:text-left [&_table]:text-sm [&_td]:border-t [&_td]:border-line [&_td]:py-3 [&_td]:pr-4 [&_td]:align-top [&_th]:pb-3 [&_th]:pr-4 [&_th]:font-semibold [&_th]:text-ink [&_ul]:mt-4 [&_ul]:list-disc [&_ul]:pl-6">
             <CookiePolicy />
           </div>
         </Container>

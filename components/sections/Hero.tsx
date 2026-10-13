@@ -3,22 +3,17 @@ import { site } from "@/content/site";
 import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { cn } from "@/lib/cn";
-
-// Grilla decorativa con el recurso gráfico del logo "Bloque".
-// 1 = bloque azul, 0 = bloque vacío, 2 = el bloque "resultado" en acento.
-const blocks = [
-  [1, 0, 0, 0],
-  [1, 0, 1, 0],
-  [1, 1, 1, 0],
-  [1, 1, 1, 2],
-];
+import { LogoMark } from "@/components/ui/Logo";
 
 export function Hero() {
   const { hero } = site;
   return (
-    <section id="inicio" aria-labelledby="hero-title" className="bg-background">
-      <Container className="grid items-center gap-12 pt-16 pb-20 sm:pt-20 sm:pb-24 lg:grid-cols-12 lg:pt-24 lg:pb-32">
+    <section
+      id="inicio"
+      aria-labelledby="hero-title"
+      className="relative overflow-hidden bg-background bg-[radial-gradient(45%_60%_at_88%_35%,var(--color-accent-soft)_0%,transparent_70%),radial-gradient(35%_45%_at_70%_85%,var(--color-primary-soft)_0%,transparent_70%)]"
+    >
+      <Container className="relative grid items-center gap-12 pt-16 pb-20 sm:pt-20 sm:pb-24 lg:grid-cols-12 lg:pt-24 lg:pb-32">
         <div className="lg:col-span-8">
           <Eyebrow className="text-primary">{hero.eyebrow}</Eyebrow>
           <h1
@@ -41,20 +36,8 @@ export function Hero() {
           </div>
         </div>
 
-        <div aria-hidden="true" className="hidden lg:col-span-4 lg:block">
-          <div className="ml-auto grid w-full max-w-xs grid-cols-4 gap-3">
-            {blocks.flat().map((value, index) => (
-              <span
-                key={index}
-                className={cn(
-                  "aspect-square rounded-[22%]",
-                  value === 1 && "bg-primary",
-                  value === 0 && "border border-line",
-                  value === 2 && "bg-accent",
-                )}
-              />
-            ))}
-          </div>
+        <div aria-hidden="true" className="hidden lg:col-span-4 lg:flex lg:justify-end">
+          <LogoMark className="h-auto w-full max-w-sm" />
         </div>
       </Container>
     </section>

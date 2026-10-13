@@ -163,7 +163,7 @@ function Field({
   const errorId = `${id}-error`;
   const inputClasses = cn(
     "w-full rounded-control border bg-surface px-3.5 py-2.5 text-base text-ink transition-colors",
-    "focus-visible:outline-2 focus-visible:outline-offset-0 focus-visible:outline-accent",
+    "focus-visible:outline-2 focus-visible:outline-offset-0 focus-visible:outline-primary",
     error ? "border-danger" : "border-line hover:border-ink-muted",
   );
   const shared = {

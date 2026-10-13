@@ -9,7 +9,7 @@ export function Contact() {
   const { contact, contactSection } = site;
   const { labels } = contactSection;
   const linkClasses =
-    "rounded-control font-semibold text-ink underline-offset-4 hover:text-accent hover:underline";
+    "rounded-control font-semibold text-ink underline-offset-4 hover:text-primary hover:underline";
 
   return (
     <Section

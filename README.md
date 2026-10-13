@@ -46,8 +46,8 @@ Variables de entorno opcionales: ver `.env.example`.
 
 ## Pendientes (TODO)
 
-- Logo final en SVG del diseñador (`components/ui/Logo.tsx`, `app/icon.svg`).
-- Hex exactos de Eléctrico y Señal (`app/globals.css`).
+- Logo: redibujado en vector desde el PNG original (`components/ui/Logo.tsx`, `public/logo-ludens-isotipo.svg`). Reemplazar por el archivo vectorial original si existe.
+- Confirmar paleta final (naranja, verde, carbón; celeste solo en MarketOnline) en `app/globals.css`.
 - Captura real de MarketOnline (`public/`, `content/site.ts` → `marketOnline.image`).
 - Cifras reales de métricas (hoy "XX" en `content/site.ts`).
 - Confirmar email de contacto (`content/site.ts`).

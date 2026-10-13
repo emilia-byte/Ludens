@@ -1,18 +1,16 @@
 import type { ComponentPropsWithoutRef } from "react";
 import { cn } from "@/lib/cn";
 
-type Variant = "primary" | "secondary" | "signal" | "outline-night";
+type Variant = "primary" | "secondary" | "outline-night";
 type Size = "md" | "lg";
 
 const base =
   "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-control font-semibold transition-colors duration-150 disabled:cursor-not-allowed disabled:opacity-60";
 
 const variants: Record<Variant, string> = {
-  // CTA principal sobre fondo claro (Eléctrico).
-  primary: "bg-accent text-white hover:bg-accent-strong",
+  // CTA principal (naranja del logo), sobre fondo claro u oscuro.
+  primary: "bg-accent text-ink hover:bg-accent-strong",
   secondary: "border border-line bg-surface text-ink hover:border-ink",
-  // CTA principal sobre fondo oscuro (Señal).
-  signal: "bg-signal text-night hover:bg-signal-strong",
   "outline-night": "border border-night-line text-on-night hover:border-on-night",
 };
 

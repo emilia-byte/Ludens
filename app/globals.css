@@ -1,32 +1,43 @@
 @import "tailwindcss";
 
 /*
-  Tokens de diseño de Ludens (paleta del "Ludens Branding Project").
+  Tokens de diseño de Ludens (colores del logo de ludenssa.com: naranja, verde, blanco y carbón).
   Los componentes usan solo estas clases (bg-night, text-ink, etc.), nunca hex sueltos.
 
   Reglas de uso:
-  - accent (Eléctrico) es el color de los CTA sobre fondo claro, con texto blanco.
-  - signal (Señal) es el acento SOLO sobre fondo oscuro (night), con texto night.
+  - accent (naranja del logo) es el único color de los CTA, siempre con texto ink (contraste AA).
+    No usarlo como color de texto sobre fondo claro: no llega al contraste mínimo.
+  - primary (verde Ludens oscuro) es el color de marca para textos destacados, iconos y foco.
+  - signal (verde del logo) es decorativo: líneas, puntos, checks sobre fondo oscuro. No para texto sobre claro.
+  - mo-* (colores de marketonline.me) se usan SOLO en la sección de MarketOnline.
   - Radios: rounded-control (8px) para botones e inputs, rounded-card (16px) para tarjetas y paneles.
 */
 @theme {
-  --color-background: #f5f6f9; /* Niebla */
+  --color-background: #f7f8f7;
   --color-surface: #ffffff;
-  --color-ink: #1c1f26; /* Carbón */
-  --color-ink-muted: #4b5163;
-  --color-line: #dfe2ea;
-  --color-primary: #1a2b80; /* Azul Ludens */
-  --color-night: #0b1236; /* Noche */
-  --color-night-line: #26305c;
+  --color-ink: #292e37; /* Texto del logo */
+  --color-ink-muted: #565c67;
+  --color-line: #e4e6e3;
+  --color-primary: #2b7d10; /* Verde Ludens oscuro (versión con contraste AA del verde del logo) */
+  --color-primary-soft: #eef9e6; /* Verde del logo, muy aclarado */
+  --color-accent: #ff7a00; /* Naranja del logo */
+  --color-accent-strong: #ff9419;
+  --color-accent-soft: #fff2e6;
+  --color-signal: #7fdc35; /* Verde del logo */
+  --color-night: #1f232b; /* Carbón del logo, oscurecido */
+  --color-night-line: #353a45;
   --color-on-night: #ffffff;
-  --color-on-night-muted: #aeb6d3;
-  /* TODO: confirmar hex exactos de Eléctrico y Señal con el diseñador (no figuran en el PDF). */
-  --color-accent: #3d5afe; /* Eléctrico */
-  --color-accent-strong: #2a44d6;
-  --color-signal: #e8ff3a; /* Señal */
-  --color-signal-strong: #d6f01f;
+  --color-on-night-muted: #b9bec8;
   --color-danger: #b42318;
   --color-success: #067647;
+
+  /* MarketOnline (marketonline.me) */
+  --color-mo-blue: #0a9fef;
+  --color-mo-blue-strong: #0382d0;
+  --color-mo-sky: #d3ecf8;
+  --color-mo-mist: #f3f9fc;
+  --color-mo-navy: #011728;
+  --color-mo-slate: #4b6275;
 
   --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
@@ -34,7 +45,7 @@
   --radius-control: 0.5rem;
   --radius-card: 1rem;
 
-  --shadow-card: 0 1px 2px rgb(11 18 54 / 0.04), 0 8px 24px -12px rgb(11 18 54 / 0.12);
+  --shadow-card: 0 1px 2px rgb(31 35 43 / 0.04), 0 8px 24px -12px rgb(31 35 43 / 0.12);
 }
 
 @layer base {
@@ -54,15 +65,15 @@
   }
 
   :focus-visible {
-    @apply outline-2 outline-offset-2 outline-accent;
+    @apply outline-2 outline-offset-2 outline-primary;
   }
 
-  /* En secciones oscuras el foco usa Señal para mantener el contraste. */
+  /* En secciones oscuras el foco usa el verde del logo para mantener el contraste. */
   [data-tone="night"] :focus-visible {
     @apply outline-signal;
   }
 
   ::selection {
-    @apply bg-accent text-white;
+    @apply bg-accent text-ink;
   }
 }

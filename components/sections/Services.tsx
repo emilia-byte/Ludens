@@ -13,7 +13,7 @@ export function Services() {
         {services.items.map((service) => (
           <li key={service.title}>
             <Card className="h-full transition-colors duration-150 hover:border-primary/40">
-              <span className="inline-flex size-11 items-center justify-center rounded-control bg-background text-primary">
+              <span className="inline-flex size-11 items-center justify-center rounded-control bg-primary-soft text-primary">
                 <Icon name={service.icon} className="size-5" strokeWidth={1.75} />
               </span>
               <h3 className="mt-6 text-lg font-bold tracking-[-0.01em] text-ink">

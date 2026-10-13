@@ -5,27 +5,33 @@ import { ButtonLink } from "@/components/ui/Button";
 import { Section } from "@/components/ui/Section";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 
+// Única sección con los colores de MarketOnline (celeste), para marcar que es un producto propio.
 export function MarketOnline() {
   const { marketOnline } = site;
   return (
     <Section
       id="marketonline"
-      tone="night"
+      tone="marketonline"
       aria-labelledby="marketonline-title"
       containerClassName="grid items-center gap-12 lg:grid-cols-2 lg:gap-16"
     >
       <div>
         <SectionHeader
           id="marketonline-title"
-          tone="night"
+          tone="marketonline"
           eyebrow={marketOnline.eyebrow}
           title={marketOnline.title}
           subtitle={marketOnline.description}
         />
         <ul className="mt-8 space-y-3">
           {marketOnline.features.map((feature) => (
-            <li key={feature} className="flex gap-3 text-on-night">
-              <Check aria-hidden="true" className="mt-0.5 size-5 shrink-0 text-signal" />
+            <li key={feature} className="flex gap-3 text-mo-navy">
+              <span
+                aria-hidden="true"
+                className="mt-0.5 inline-flex size-5 shrink-0 items-center justify-center rounded-full bg-mo-blue-strong"
+              >
+                <Check className="size-3.5 text-white" strokeWidth={3} />
+              </span>
               <span>{feature}</span>
             </li>
           ))}
@@ -34,7 +40,6 @@ export function MarketOnline() {
           href={marketOnline.url}
           target="_blank"
           rel="noopener noreferrer"
-          variant="signal"
           size="lg"
           className="mt-10"
         >
@@ -44,7 +49,7 @@ export function MarketOnline() {
         </ButtonLink>
       </div>
 
-      <div className="overflow-hidden rounded-card border border-night-line bg-on-night/5 p-2">
+      <div className="overflow-hidden rounded-card border border-mo-sky bg-surface p-2 shadow-card">
         {/* TODO: reemplazar el placeholder por la captura real de MarketOnline (ver content/site.ts).
             Con una imagen PNG o WebP real se puede quitar `unoptimized`. */}
         <Image
