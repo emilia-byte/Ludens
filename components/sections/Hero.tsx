@@ -1,17 +1,18 @@
 import { ArrowRight } from "lucide-react";
 import { site } from "@/content/site";
+import type { Dictionary } from "@/content/dictionaries";
 import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { LogoMark } from "@/components/ui/Logo";
 
-export function Hero() {
-  const { hero } = site;
+export function Hero({ hero }: { hero: Dictionary["hero"] }) {
+  const [services, , , contact] = site.sectionIds;
   return (
     <section
       id="inicio"
       aria-labelledby="hero-title"
-      className="relative overflow-hidden bg-background bg-[radial-gradient(45%_60%_at_88%_35%,var(--color-accent-soft)_0%,transparent_70%),radial-gradient(35%_45%_at_70%_85%,var(--color-primary-soft)_0%,transparent_70%)]"
+      className="relative overflow-hidden bg-background bg-[radial-gradient(45%_60%_at_88%_35%,var(--color-accent-soft)_0%,transparent_70%),radial-gradient(35%_45%_at_70%_85%,var(--color-primary-soft)_0%,transparent_70%)] rtl:bg-[radial-gradient(45%_60%_at_12%_35%,var(--color-accent-soft)_0%,transparent_70%),radial-gradient(35%_45%_at_30%_85%,var(--color-primary-soft)_0%,transparent_70%)]"
     >
       <Container className="relative grid items-center gap-12 pt-16 pb-20 sm:pt-20 sm:pb-24 lg:grid-cols-12 lg:pt-24 lg:pb-32">
         <div className="lg:col-span-8">
@@ -26,12 +27,12 @@ export function Hero() {
             {hero.subtitle}
           </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-            <ButtonLink href={hero.primaryCta.href} size="lg">
-              {hero.primaryCta.label}
-              <ArrowRight aria-hidden="true" className="size-4" />
+            <ButtonLink href={`#${contact}`} size="lg">
+              {hero.primaryCta}
+              <ArrowRight aria-hidden="true" className="size-4 rtl:rotate-180" />
             </ButtonLink>
-            <ButtonLink href={hero.secondaryCta.href} size="lg" variant="secondary">
-              {hero.secondaryCta.label}
+            <ButtonLink href={`#${services}`} size="lg" variant="secondary">
+              {hero.secondaryCta}
             </ButtonLink>
           </div>
         </div>

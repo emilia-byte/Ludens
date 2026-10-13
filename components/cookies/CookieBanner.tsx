@@ -1,23 +1,24 @@
 "use client";
 
 import Link from "next/link";
-import { site } from "@/content/site";
+import type { Dictionary } from "@/content/dictionaries";
 import { writeConsent } from "@/lib/consent";
 import { useConsent } from "@/lib/use-consent";
 import { Button } from "@/components/ui/Button";
 
-export function CookieBanner() {
+type CookieBannerProps = {
+  copy: Dictionary["cookieBanner"];
+  policyHref: string;
+};
+
+export function CookieBanner({ copy, policyHref }: CookieBannerProps) {
   const consent = useConsent();
-  const copy = site.cookieBanner;
 
   // Solo se muestra cuando ya leímos el navegador y no hay una elección guardada.
   if (consent !== null) return null;
 
   return (
-    <section
-      aria-labelledby="cookie-banner-title"
-      className="fixed inset-x-0 bottom-0 z-50 p-3 sm:p-4"
-    >
+    <section aria-labelledby="cookie-banner-title" className="fixed inset-x-0 bottom-0 z-50 p-3 sm:p-4">
       <div className="mx-auto max-w-6xl">
         <div className="flex flex-col gap-4 rounded-card border border-line bg-surface p-5 shadow-card sm:p-6 md:flex-row md:items-center md:justify-between md:gap-8">
           <div className="max-w-2xl">
@@ -27,7 +28,7 @@ export function CookieBanner() {
             <p className="mt-1 text-sm leading-relaxed text-ink-muted">
               {copy.body}{" "}
               <Link
-                href={site.footer.cookiePolicy.href}
+                href={policyHref}
                 className="font-semibold text-primary underline underline-offset-2 hover:text-ink"
               >
                 {copy.policyLink}

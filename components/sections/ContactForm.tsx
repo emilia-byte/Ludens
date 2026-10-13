@@ -1,21 +1,21 @@
 "use client";
 
 import { useRef, useState, type FormEvent } from "react";
-import { site } from "@/content/site";
+import type { Dictionary } from "@/content/dictionaries";
 import { submitContact, type ContactPayload } from "@/lib/contact";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/cn";
 
+type FormCopy = Dictionary["contact"]["form"];
 type FieldName = keyof ContactPayload;
 type Errors = Partial<Record<FieldName, string>>;
 type Status = "idle" | "submitting" | "success" | "error" | "not-configured";
 
-const copy = site.contactSection.form;
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 const FIELD_ORDER: FieldName[] = ["name", "email", "company", "message"];
 const EMPTY: ContactPayload = { name: "", email: "", company: "", message: "" };
 
-function validate(values: ContactPayload): Errors {
+function validate(values: ContactPayload, copy: FormCopy): Errors {
   const errors: Errors = {};
   if (!values.name.trim()) errors.name = copy.errors.nameRequired;
   if (!values.email.trim()) errors.email = copy.errors.emailRequired;
@@ -25,16 +25,17 @@ function validate(values: ContactPayload): Errors {
   return errors;
 }
 
-export function ContactForm() {
+export function ContactForm({ copy }: { copy: FormCopy }) {
   const [values, setValues] = useState<ContactPayload>(EMPTY);
   const [touched, setTouched] = useState<Partial<Record<FieldName, boolean>>>({});
   const [submitted, setSubmitted] = useState(false);
   const [status, setStatus] = useState<Status>("idle");
   const formRef = useRef<HTMLFormElement>(null);
 
-  const errors = validate(values);
+  const errors = validate(values, copy);
   const visibleError = (field: FieldName) =>
     submitted || touched[field] ? errors[field] : undefined;
+  const touch = (field: FieldName) => () => setTouched((t) => ({ ...t, [field]: true }));
 
   function update(field: FieldName, value: string) {
     setValues((current) => ({ ...current, [field]: value }));
@@ -77,43 +78,43 @@ export function ContactForm() {
       <div className="grid gap-5 sm:grid-cols-2">
         <Field
           name="name"
-          label={copy.fields.name.label}
-          autoComplete={copy.fields.name.autoComplete}
+          label={copy.name}
+          autoComplete="name"
           value={values.name}
           error={visibleError("name")}
           required
           onChange={(value) => update("name", value)}
-          onBlur={() => setTouched((t) => ({ ...t, name: true }))}
+          onBlur={touch("name")}
         />
         <Field
           name="email"
           type="email"
-          label={copy.fields.email.label}
-          autoComplete={copy.fields.email.autoComplete}
+          label={copy.email}
+          autoComplete="email"
           value={values.email}
           error={visibleError("email")}
           required
           onChange={(value) => update("email", value)}
-          onBlur={() => setTouched((t) => ({ ...t, email: true }))}
+          onBlur={touch("email")}
         />
       </div>
       <Field
         name="company"
-        label={copy.fields.company.label}
+        label={copy.company}
         hint={copy.optional}
-        autoComplete={copy.fields.company.autoComplete}
+        autoComplete="organization"
         value={values.company}
         onChange={(value) => update("company", value)}
       />
       <Field
         name="message"
-        label={copy.fields.message.label}
+        label={copy.message}
         multiline
         value={values.message}
         error={visibleError("message")}
         required
         onChange={(value) => update("message", value)}
-        onBlur={() => setTouched((t) => ({ ...t, message: true }))}
+        onBlur={touch("message")}
       />
 
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
@@ -123,9 +124,7 @@ export function ContactForm() {
         <p role="status" aria-live="polite" className="text-sm leading-relaxed">
           {status === "success" && <span className="text-success">{copy.success}</span>}
           {status === "error" && <span className="text-danger">{copy.error}</span>}
-          {status === "not-configured" && (
-            <span className="text-ink-muted">{copy.notConfigured}</span>
-          )}
+          {status === "not-configured" && <span className="text-ink-muted">{copy.notConfigured}</span>}
         </p>
       </div>
     </form>
@@ -200,6 +199,7 @@ function Field({
         <input
           {...shared}
           type={type}
+          dir={type === "email" ? "ltr" : undefined}
           className={inputClasses}
           onChange={(event) => onChange(event.target.value)}
         />

@@ -1,11 +1,11 @@
 import { site } from "@/content/site";
+import type { Dictionary } from "@/content/dictionaries";
 import { Section } from "@/components/ui/Section";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 
-export function Process() {
-  const { process } = site;
+export function Process({ process }: { process: Dictionary["process"] }) {
   return (
-    <Section id="proceso" tone="surface" aria-labelledby="proceso-title">
+    <Section id={site.sectionIds[2]} tone="surface" aria-labelledby="proceso-title">
       <SectionHeader id="proceso-title" title={process.title} subtitle={process.subtitle} />
       <ol className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
         {process.steps.map((step, index) => (

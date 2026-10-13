@@ -1,19 +1,27 @@
 import Link from "next/link";
 import { site } from "@/content/site";
+import type { Dictionary } from "@/content/dictionaries";
+import type { Locale } from "@/lib/i18n";
 import { CookieSettingsButton } from "@/components/cookies/CookieSettingsButton";
 import { Container } from "@/components/ui/Container";
 import { CurrentYear } from "@/components/ui/CurrentYear";
 import { Logo } from "@/components/ui/Logo";
 
-export function Footer() {
-  const { contact, footer } = site;
+type FooterProps = {
+  lang: Locale;
+  footer: Dictionary["footer"];
+  common: Dictionary["common"];
+};
+
+export function Footer({ lang, footer, common }: FooterProps) {
+  const { contact } = site;
   const linkClasses = "rounded-control text-on-night-muted transition-colors hover:text-on-night";
 
   return (
     <footer data-tone="night" className="bg-night text-on-night">
       <Container className="grid gap-10 py-16 sm:grid-cols-2 lg:grid-cols-12">
         <div className="lg:col-span-5">
-          <Link href="/" aria-label={`${site.name}, ir al inicio`} className="inline-block rounded-control">
+          <Link href={`/${lang}`} aria-label={common.homeLabel} className="inline-block rounded-control">
             <Logo tone="night" />
           </Link>
           <p className="mt-4 max-w-sm leading-relaxed text-on-night-muted">{footer.tagline}</p>
@@ -26,7 +34,7 @@ export function Footer() {
           </p>
           <p>
             <a href={contact.phoneHref} className={linkClasses}>
-              Tel: {contact.phoneDisplay}
+              {footer.phone} <span dir="ltr">{contact.phoneDisplay}</span>
             </a>
           </p>
           <p>
@@ -36,11 +44,11 @@ export function Footer() {
           </p>
         </address>
 
-        <nav aria-label="Legal" className="lg:col-span-3">
+        <nav aria-label={footer.legalNav} className="lg:col-span-3">
           <ul className="space-y-2">
             <li>
-              <Link href={footer.cookiePolicy.href} className={linkClasses}>
-                {footer.cookiePolicy.label}
+              <Link href={`/${lang}/${site.cookiePolicyPath}`} className={linkClasses}>
+                {footer.cookiePolicy}
               </Link>
             </li>
             <li>
@@ -48,7 +56,7 @@ export function Footer() {
             </li>
             <li>
               <a href={contact.linkedin} target="_blank" rel="noopener noreferrer" className={linkClasses}>
-                LinkedIn<span className="sr-only"> (se abre en una pestaña nueva)</span>
+                LinkedIn<span className="sr-only"> {common.newTab}</span>
               </a>
             </li>
           </ul>
