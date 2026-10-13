@@ -1,26 +1,68 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/*
+  Tokens de diseño de Ludens (paleta del "Ludens Branding Project").
+  Los componentes usan solo estas clases (bg-night, text-ink, etc.), nunca hex sueltos.
+
+  Reglas de uso:
+  - accent (Eléctrico) es el color de los CTA sobre fondo claro, con texto blanco.
+  - signal (Señal) es el acento SOLO sobre fondo oscuro (night), con texto night.
+  - Radios: rounded-control (8px) para botones e inputs, rounded-card (16px) para tarjetas y paneles.
+*/
+@theme {
+  --color-background: #f5f6f9; /* Niebla */
+  --color-surface: #ffffff;
+  --color-ink: #1c1f26; /* Carbón */
+  --color-ink-muted: #4b5163;
+  --color-line: #dfe2ea;
+  --color-primary: #1a2b80; /* Azul Ludens */
+  --color-night: #0b1236; /* Noche */
+  --color-night-line: #26305c;
+  --color-on-night: #ffffff;
+  --color-on-night-muted: #aeb6d3;
+  /* TODO: confirmar hex exactos de Eléctrico y Señal con el diseñador (no figuran en el PDF). */
+  --color-accent: #3d5afe; /* Eléctrico */
+  --color-accent-strong: #2a44d6;
+  --color-signal: #e8ff3a; /* Señal */
+  --color-signal-strong: #d6f01f;
+  --color-danger: #b42318;
+  --color-success: #067647;
+
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+
+  --radius-control: 0.5rem;
+  --radius-card: 1rem;
+
+  --shadow-card: 0 1px 2px rgb(11 18 54 / 0.04), 0 8px 24px -12px rgb(11 18 54 / 0.12);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    scroll-padding-top: 5rem;
+    -webkit-text-size-adjust: 100%;
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    @apply bg-background font-sans text-ink antialiased;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-accent;
+  }
+
+  /* En secciones oscuras el foco usa Señal para mantener el contraste. */
+  [data-tone="night"] :focus-visible {
+    @apply outline-signal;
+  }
+
+  ::selection {
+    @apply bg-accent text-white;
+  }
 }

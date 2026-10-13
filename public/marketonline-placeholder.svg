@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+  <!-- TODO: placeholder. Reemplazar por la captura real de MarketOnline. -->
+  <rect width="1600" height="1000" fill="#141c4a"/>
+  <rect x="0" y="0" width="1600" height="72" fill="#1a2457"/>
+  <circle cx="44" cy="36" r="9" fill="#26305c"/>
+  <circle cx="74" cy="36" r="9" fill="#26305c"/>
+  <circle cx="104" cy="36" r="9" fill="#26305c"/>
+  <rect x="0" y="72" width="300" height="928" fill="#111841"/>
+  <g fill="#26305c">
+    <rect x="40" y="124" width="200" height="20" rx="6"/>
+    <rect x="40" y="172" width="160" height="20" rx="6"/>
+    <rect x="40" y="220" width="180" height="20" rx="6"/>
+    <rect x="40" y="268" width="140" height="20" rx="6"/>
+  </g>
+  <g fill="#1a2457">
+    <rect x="360" y="124" width="380" height="180" rx="16"/>
+    <rect x="780" y="124" width="380" height="180" rx="16"/>
+    <rect x="1200" y="124" width="360" height="180" rx="16"/>
+    <rect x="360" y="344" width="1200" height="600" rx="16"/>
+  </g>
+  <text x="960" y="660" text-anchor="middle" fill="#aeb6d3" font-family="system-ui, sans-serif" font-size="40" font-weight="600">Captura de MarketOnline</text>
+  <text x="960" y="712" text-anchor="middle" fill="#7d86ad" font-family="system-ui, sans-serif" font-size="28">Imagen pendiente</text>
+</svg>

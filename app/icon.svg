@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Isotipo "Bloque" sobre Azul Ludens. TODO: reemplazar por el isotipo final del diseñador. -->
+  <rect width="64" height="64" rx="14" fill="#1a2b80"/>
+  <g transform="translate(20.5 14.5)">
+    <rect x="0" y="0" width="10" height="10" rx="3" fill="#ffffff"/>
+    <rect x="0" y="12.5" width="10" height="10" rx="3" fill="#ffffff"/>
+    <rect x="0" y="25" width="10" height="10" rx="3" fill="#ffffff"/>
+    <rect x="12.5" y="25" width="10" height="10" rx="3" fill="#e8ff3a"/>
+  </g>
+</svg>
