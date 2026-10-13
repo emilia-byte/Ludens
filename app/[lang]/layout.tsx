@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
-import { JetBrains_Mono, Manrope, Noto_Sans_Hebrew } from "next/font/google";
+import { Manrope, Noto_Sans_Hebrew } from "next/font/google";
 import { site } from "@/content/site";
 import { getDictionary } from "@/content/dictionaries";
 import { getDirection, hasLocale, locales, ogLocales } from "@/lib/i18n";
@@ -11,12 +11,6 @@ import "../globals.css";
 const manrope = Manrope({
   variable: "--font-manrope",
   subsets: ["latin"],
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
-  subsets: ["latin"],
-  weight: ["500"],
 });
 
 // Manrope no tiene caracteres hebreos: esta fuente cubre la versión en hebreo.
@@ -66,7 +60,7 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
     <html
       lang={lang}
       dir={getDirection(lang)}
-      className={`${manrope.variable} ${jetbrainsMono.variable} ${notoHebrew.variable}`}
+      className={`${manrope.variable} ${notoHebrew.variable}`}
     >
       <body className="flex min-h-dvh flex-col">
         {children}

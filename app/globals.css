@@ -40,7 +40,7 @@
   --color-mo-slate: #4b6275;
 
   --font-sans: var(--font-manrope), var(--font-hebrew), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-jetbrains-mono), var(--font-hebrew), ui-monospace, monospace;
+  --font-mono: ui-monospace, monospace;
 
   --radius-control: 0.5rem;
   --radius-card: 1rem;

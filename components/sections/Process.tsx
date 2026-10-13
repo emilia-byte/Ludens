@@ -10,7 +10,7 @@ export function Process({ process }: { process: Dictionary["process"] }) {
       <ol className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
         {process.steps.map((step, index) => (
           <li key={step.title} className="border-t-2 border-signal pt-6">
-            <span aria-hidden="true" className="font-mono text-sm font-medium text-primary">
+            <span aria-hidden="true" className="text-sm font-bold text-primary tabular-nums">
               {String(index + 1).padStart(2, "0")}
             </span>
             <h3 className="mt-3 text-xl font-bold tracking-[-0.02em] text-ink">{step.title}</h3>

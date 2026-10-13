@@ -83,7 +83,7 @@ export function LanguageSwitcher({ lang, label }: LanguageSwitcherProps) {
               {locale === lang ? (
                 <Check aria-hidden="true" className="size-4 text-primary" />
               ) : (
-                <span aria-hidden="true" className="font-mono text-xs text-ink-muted uppercase">
+                <span aria-hidden="true" className="text-xs font-semibold text-ink-muted uppercase">
                   {locale}
                 </span>
               )}
