@@ -25,10 +25,9 @@ export const de: Dictionary = {
   },
 
   hero: {
-    eyebrow: "Ehrgeiz ist der erste Schritt",
     title: "Optimierte Kampagnen, von A bis Z betreut.",
     subtitle:
-      "Google Ads, Meta und Taboola in den Händen eines Teams: Strategie, Umsetzung und Analyse mit Fokus auf Ihren ROI.",
+      "Ein Team für Ihre Kampagnen auf Google Ads, Meta und Taboola. Strategie, Umsetzung und Analyse mit Fokus auf Ihren ROI.",
     primaryCta: "Kontakt aufnehmen",
     secondaryCta: "Leistungen ansehen",
   },
@@ -71,7 +70,6 @@ export const de: Dictionary = {
   },
 
   marketOnline: {
-    eyebrow: "Eigenes Produkt",
     title: "Stolze Eigentümer von MarketOnline.",
     description:
       "MarketOnline ist unsere Plattform für zentrales Kampagnenmanagement. Agenturen und Marken steuern Google Ads, Facebook Ads und Taboola aus einer einzigen Umgebung.",
@@ -145,7 +143,7 @@ export const de: Dictionary = {
   },
 
   footer: {
-    tagline: "Plattform für gemanagtes digitales Marketing: alle Ihre Anzeigen an einem Ort.",
+    tagline: "Alle Ihre Anzeigen an einem Ort.",
     legalNav: "Rechtliches",
     cookiePolicy: "Cookie-Richtlinie",
     cookieSettings: "Cookie-Einstellungen",

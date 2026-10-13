@@ -1,11 +1,9 @@
 import { cn } from "@/lib/cn";
-import { Eyebrow } from "./Eyebrow";
 
 type SectionHeaderProps = {
   id?: string;
   title: string;
   subtitle?: string;
-  eyebrow?: string;
   tone?: "light" | "night" | "marketonline";
   className?: string;
 };
@@ -14,7 +12,6 @@ export function SectionHeader({
   id,
   title,
   subtitle,
-  eyebrow,
   tone = "light",
   className,
 }: SectionHeaderProps) {
@@ -22,11 +19,6 @@ export function SectionHeader({
   const mo = tone === "marketonline";
   return (
     <div className={cn("max-w-2xl", className)}>
-      {eyebrow && (
-        <Eyebrow className={cn("mb-4", night ? "text-signal" : mo ? "text-mo-navy" : "text-primary")}>
-          {eyebrow}
-        </Eyebrow>
-      )}
       <h2
         id={id}
         className={cn(

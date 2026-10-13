@@ -25,10 +25,9 @@ export const nl: Dictionary = {
   },
 
   hero: {
-    eyebrow: "Ambitie is de eerste stap",
     title: "Geoptimaliseerde campagnes, van begin tot eind beheerd.",
     subtitle:
-      "Google Ads, Meta en Taboola in handen van één team: strategie, uitvoering en analyse gericht op jouw ROI.",
+      "Eén team voor je campagnes op Google Ads, Meta en Taboola. Strategie, uitvoering en analyse gericht op jouw ROI.",
     primaryCta: "Neem contact op",
     secondaryCta: "Bekijk diensten",
   },
@@ -71,7 +70,6 @@ export const nl: Dictionary = {
   },
 
   marketOnline: {
-    eyebrow: "Eigen product",
     title: "Trotse eigenaar van MarketOnline.",
     description:
       "MarketOnline is ons platform voor centraal campagnebeheer. Bureaus en merken beheren Google Ads, Facebook Ads en Taboola vanuit één omgeving.",
@@ -145,7 +143,7 @@ export const nl: Dictionary = {
   },
 
   footer: {
-    tagline: "Platform voor beheerde digitale marketing: al je advertenties op één plek.",
+    tagline: "Al je advertenties op één plek.",
     legalNav: "Juridisch",
     cookiePolicy: "Cookiebeleid",
     cookieSettings: "Cookie-instellingen",

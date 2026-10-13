@@ -25,10 +25,9 @@ export const he: Dictionary = {
   },
 
   hero: {
-    eyebrow: "השאיפה היא הצעד הראשון",
     title: "קמפיינים ממוטבים, בניהול מקצה לקצה.",
     subtitle:
-      "Google Ads, Meta ו-Taboola בידי צוות אחד: אסטרטגיה, ביצוע וניתוח שמתמקדים בהחזר על ההשקעה שלכם.",
+      "צוות אחד לקמפיינים שלכם ב-Google Ads, Meta ו-Taboola. אסטרטגיה, ביצוע וניתוח שמתמקדים בהחזר על ההשקעה שלכם.",
     primaryCta: "צרו קשר",
     secondaryCta: "לשירותים שלנו",
   },
@@ -57,7 +56,6 @@ export const he: Dictionary = {
   },
 
   marketOnline: {
-    eyebrow: "מוצר שלנו",
     title: "גאים להיות הבעלים של MarketOnline.",
     description:
       "MarketOnline היא הפלטפורמה שלנו לניהול מרוכז של קמפיינים. סוכנויות ומותגים מנהלים את Google Ads, Facebook Ads ו-Taboola מסביבה אחת.",
@@ -127,7 +125,7 @@ export const he: Dictionary = {
   },
 
   footer: {
-    tagline: "פלטפורמה לשיווק דיגיטלי מנוהל: כל המודעות שלכם במקום אחד.",
+    tagline: "כל המודעות שלכם במקום אחד.",
     legalNav: "מידע משפטי",
     cookiePolicy: "מדיניות עוגיות",
     cookieSettings: "הגדרות עוגיות",

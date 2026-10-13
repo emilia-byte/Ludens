@@ -25,10 +25,9 @@ export const pt: Dictionary = {
   },
 
   hero: {
-    eyebrow: "A ambição é o primeiro passo",
     title: "Campanhas otimizadas, gerenciadas de ponta a ponta.",
     subtitle:
-      "Google Ads, Meta e Taboola nas mãos de uma só equipe: estratégia, execução e análise focadas no seu ROI.",
+      "Uma só equipe para suas campanhas no Google Ads, Meta e Taboola. Estratégia, execução e análise focadas no seu ROI.",
     primaryCta: "Fale conosco",
     secondaryCta: "Ver serviços",
   },
@@ -71,7 +70,6 @@ export const pt: Dictionary = {
   },
 
   marketOnline: {
-    eyebrow: "Produto próprio",
     title: "Orgulhosos de ser os donos da MarketOnline.",
     description:
       "A MarketOnline é a nossa plataforma de gestão centralizada de campanhas. Agências e marcas administram Google Ads, Facebook Ads e Taboola em um único ambiente.",
@@ -145,7 +143,7 @@ export const pt: Dictionary = {
   },
 
   footer: {
-    tagline: "Plataforma de marketing digital gerenciado: todos os seus anúncios em um só lugar.",
+    tagline: "Todos os seus anúncios em um só lugar.",
     legalNav: "Legal",
     cookiePolicy: "Política de cookies",
     cookieSettings: "Configurar cookies",

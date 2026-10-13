@@ -25,7 +25,6 @@ export function MarketOnline({ marketOnline, newTab }: MarketOnlineProps) {
         <SectionHeader
           id="marketonline-title"
           tone="marketonline"
-          eyebrow={marketOnline.eyebrow}
           title={marketOnline.title}
           subtitle={marketOnline.description}
         />

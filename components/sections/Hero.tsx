@@ -3,7 +3,6 @@ import { site } from "@/content/site";
 import type { Dictionary } from "@/content/dictionaries";
 import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
-import { Eyebrow } from "@/components/ui/Eyebrow";
 import { LogoMark } from "@/components/ui/Logo";
 
 export function Hero({ hero }: { hero: Dictionary["hero"] }) {
@@ -16,10 +15,9 @@ export function Hero({ hero }: { hero: Dictionary["hero"] }) {
     >
       <Container className="relative grid items-center gap-12 pt-16 pb-20 sm:pt-20 sm:pb-24 lg:grid-cols-12 lg:pt-24 lg:pb-32">
         <div className="lg:col-span-8">
-          <Eyebrow className="text-primary">{hero.eyebrow}</Eyebrow>
           <h1
             id="hero-title"
-            className="mt-5 text-4xl leading-[1.05] font-extrabold tracking-[-0.04em] text-balance text-ink sm:text-5xl lg:text-6xl"
+            className="text-4xl leading-[1.05] font-extrabold tracking-[-0.04em] text-balance text-ink sm:text-5xl lg:text-6xl"
           >
             {hero.title}
           </h1>

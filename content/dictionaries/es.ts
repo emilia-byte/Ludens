@@ -25,11 +25,9 @@ export const es = {
   },
 
   hero: {
-    // Original: "Ambition is the first step towards Ludens S.A"
-    eyebrow: "La ambición es el primer paso",
     title: "Campañas optimizadas, gestionadas de punta a punta.",
     subtitle:
-      "Google Ads, Meta y Taboola en manos de un solo equipo: estrategia, ejecución y análisis enfocados en tu ROI.",
+      "Un solo equipo para tus campañas en Google Ads, Meta y Taboola. Estrategia, ejecución y análisis enfocados en tu ROI.",
     primaryCta: "Contactanos",
     secondaryCta: "Ver servicios",
   },
@@ -75,7 +73,6 @@ export const es = {
   },
 
   marketOnline: {
-    eyebrow: "Producto propio",
     // Fuente: marketonline.me ("Centralised Campaign Management Made Easier")
     title: "Orgullosos de ser los dueños de MarketOnline.",
     description:
@@ -151,7 +148,7 @@ export const es = {
   },
 
   footer: {
-    tagline: "Plataforma de marketing digital gestionado: todos tus anuncios en un solo lugar.",
+    tagline: "Todos tus anuncios en un solo lugar.",
     legalNav: "Legal",
     cookiePolicy: "Política de cookies",
     cookieSettings: "Configurar cookies",
