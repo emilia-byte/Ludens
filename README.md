@@ -21,7 +21,7 @@ npm run build      # build de producción
 | Qué | Dónde |
 |---|---|
 | Textos de cada idioma (incluida la política de cookies) | `content/dictionaries/*.ts` |
-| Datos que no se traducen (contacto, URLs, imágenes, cifras) | `content/site.ts` |
+| Datos que no se traducen (contacto, URLs, imágenes, cifras de métricas) | `content/site.ts` |
 | Idiomas disponibles y detección del idioma | `lib/i18n.ts`, `proxy.ts` |
 | Tokens de diseño (colores, fuentes, radios) | `app/globals.css` (`@theme`) |
 | Componentes reutilizables | `components/ui/` |
@@ -60,7 +60,6 @@ Variables de entorno opcionales: ver `.env.example`.
 - Logo: redibujado en vector desde el PNG original (`components/ui/Logo.tsx`, `public/logo-ludens-isotipo.svg`). Reemplazar por el archivo vectorial original si existe.
 - Confirmar paleta final (naranja, verde, carbón; celeste solo en MarketOnline) en `app/globals.css`.
 - Revisión de las traducciones por hablantes nativos (en especial hebreo y la política de cookies).
-- Cifras reales de métricas (hoy "XX" en `content/site.ts` → `metricValues`).
 - Confirmar email de contacto (`content/site.ts`).
 - Revisión legal de la política de cookies en todos los idiomas (`content/dictionaries/*.ts` → `cookiePolicy`).
 - Conectar el formulario de contacto (`lib/contact.ts`).

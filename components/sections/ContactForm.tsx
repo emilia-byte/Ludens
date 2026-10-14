@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, type FormEvent } from "react";
+import { useRef, useState, type SubmitEvent } from "react";
 import type { Dictionary } from "@/content/dictionaries";
 import { submitContact, type ContactPayload } from "@/lib/contact";
 import { Button } from "@/components/ui/Button";
@@ -42,7 +42,7 @@ export function ContactForm({ copy }: { copy: FormCopy }) {
     if (status !== "submitting") setStatus("idle");
   }
 
-  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: SubmitEvent<HTMLFormElement>) {
     event.preventDefault();
     setSubmitted(true);
 
@@ -163,7 +163,7 @@ function Field({
   const inputClasses = cn(
     "w-full rounded-control border bg-surface px-3.5 py-2.5 text-base text-ink transition-colors",
     "focus-visible:outline-2 focus-visible:outline-offset-0 focus-visible:outline-primary",
-    error ? "border-danger" : "border-line hover:border-ink-muted",
+    error ? "border-danger" : "border-line-strong hover:border-ink",
   );
   const shared = {
     id,

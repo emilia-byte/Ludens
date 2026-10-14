@@ -18,6 +18,7 @@
   --color-ink: #292e37; /* Texto del logo */
   --color-ink-muted: #565c67;
   --color-line: #e4e6e3;
+  --color-line-strong: #8a909b; /* Borde de campos de formulario: contraste 3:1 sobre blanco (WCAG 1.4.11) */
   --color-primary: #2b7d10; /* Verde Ludens oscuro (versión con contraste AA del verde del logo) */
   --color-primary-soft: #eef9e6; /* Verde del logo, muy aclarado */
   --color-accent: #ff7a00; /* Naranja del logo */

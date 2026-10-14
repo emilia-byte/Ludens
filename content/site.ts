@@ -31,8 +31,13 @@ export const site = {
 
   cookiePolicyPath: "politica-de-cookies",
 
-  // TODO: el sitio actual no publica cifras. Reemplazar "XX" por datos reales antes de publicar.
-  metricValues: ["XX", "XX", "XX", "XX"],
+  // Cifras de Ludens, en el mismo orden que dict.metrics.labels.
+  metrics: [
+    { value: "+7000" },
+    { value: "+15" },
+    { value: "+500M", unit: "USD" },
+    { value: "5" },
+  ] as { value: string; unit?: string }[],
 
   // Un icono por servicio, en el mismo orden que dict.services.items.
   serviceIcons: ["megaphone", "palette", "share", "globe", "smartphone", "layers"] as IconName[],
