@@ -28,7 +28,7 @@ npm run build      # build de producción
 | Secciones de la landing | `components/sections/` |
 | Páginas (una por idioma) | `app/[lang]/` |
 | Banner de cookies y scripts condicionados | `components/cookies/`, `lib/consent.ts` |
-| Envío del formulario (por conectar) | `lib/contact.ts` |
+| Envío del formulario (Resend) | `app/api/contact/route.ts`, `lib/contact.ts` |
 
 ## Idiomas
 
@@ -62,5 +62,5 @@ Variables de entorno opcionales: ver `.env.example`.
 - Revisión de las traducciones por hablantes nativos (en especial hebreo y la política de cookies).
 - Confirmar email de contacto (`content/site.ts`).
 - Revisión legal de la política de cookies en todos los idiomas (`content/dictionaries/*.ts` → `cookiePolicy`).
-- Conectar el formulario de contacto (`lib/contact.ts`).
+- Configurar Resend para el formulario: verificar el dominio y cargar `RESEND_API_KEY` y `CONTACT_FROM_EMAIL` en Vercel.
 - Revisar las descripciones de servicios (redacción nueva).

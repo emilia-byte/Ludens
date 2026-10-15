@@ -54,11 +54,14 @@ export function ContactForm({ copy }: { copy: FormCopy }) {
 
     setStatus("submitting");
     try {
+      const honeypot = formRef.current?.querySelector<HTMLInputElement>('[name="website"]');
       const result = await submitContact({
         name: values.name.trim(),
         email: values.email.trim(),
         company: values.company.trim(),
         message: values.message.trim(),
+        website: honeypot?.value ?? "",
+        lang: document.documentElement.lang,
       });
       if (result === "not-configured") {
         setStatus("not-configured");
@@ -75,6 +78,13 @@ export function ContactForm({ copy }: { copy: FormCopy }) {
 
   return (
     <form ref={formRef} noValidate onSubmit={handleSubmit} className="grid gap-5">
+      {/* Campo trampa para bots: oculto para las personas y para lectores de pantalla. */}
+      <div aria-hidden="true" className="absolute -start-[9999px] h-px w-px overflow-hidden">
+        <label>
+          Website
+          <input type="text" name="website" tabIndex={-1} autoComplete="off" defaultValue="" />
+        </label>
+      </div>
       <div className="grid gap-5 sm:grid-cols-2">
         <Field
           name="name"

@@ -1,7 +1,5 @@
-// Envío del formulario de contacto.
-// TODO: conectar el envío. Opciones sin backend propio:
-//   - Formspree / Web3Forms: definir NEXT_PUBLIC_CONTACT_ENDPOINT con la URL que te dan.
-//   - En Vercel: crear un Route Handler (app/api/contact/route.ts) y apuntar el endpoint ahí.
+// Envío del formulario de contacto al servidor del sitio (app/api/contact/route.ts),
+// que lo manda por email con Resend.
 
 export type ContactPayload = {
   name: string;
@@ -12,24 +10,19 @@ export type ContactPayload = {
 
 export type ContactResult = "sent" | "not-configured";
 
-const ENDPOINT = process.env.NEXT_PUBLIC_CONTACT_ENDPOINT;
+type ContactRequest = ContactPayload & {
+  // Campo trampa para bots (debe llegar vacío).
+  website: string;
+  lang: string;
+};
 
-export async function submitContact(payload: ContactPayload): Promise<ContactResult> {
-  if (!ENDPOINT) {
-    if (process.env.NODE_ENV === "development") {
-      // En desarrollo simulamos un envío exitoso para poder revisar los estados del formulario.
-      console.info("[contacto] Envío simulado (sin endpoint configurado):", payload);
-      await new Promise((resolve) => setTimeout(resolve, 600));
-      return "sent";
-    }
-    return "not-configured";
-  }
-
-  const response = await fetch(ENDPOINT, {
+export async function submitContact(payload: ContactRequest): Promise<ContactResult> {
+  const response = await fetch("/api/contact", {
     method: "POST",
-    headers: { "Content-Type": "application/json", Accept: "application/json" },
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify(payload),
   });
+  if (response.status === 503) return "not-configured";
   if (!response.ok) throw new Error(`El envío falló con estado ${response.status}`);
   return "sent";
 }
