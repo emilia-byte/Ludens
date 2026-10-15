@@ -40,9 +40,10 @@ export async function POST(request: Request) {
     return Response.json({ error: "invalid-fields" }, { status: 400 });
   }
 
-  const apiKey = process.env.RESEND_API_KEY;
-  const from = process.env.CONTACT_FROM_EMAIL;
-  const to = process.env.CONTACT_TO_EMAIL || site.contact.email;
+  // trim() también quita caracteres invisibles (como la marca BOM) que a veces se cuelan al cargar variables.
+  const apiKey = process.env.RESEND_API_KEY?.trim();
+  const from = process.env.CONTACT_FROM_EMAIL?.trim();
+  const to = process.env.CONTACT_TO_EMAIL?.trim() || site.contact.email;
 
   if (!apiKey || !from) {
     if (process.env.NODE_ENV === "development") {
