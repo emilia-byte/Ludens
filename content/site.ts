@@ -45,10 +45,10 @@ export const site = {
   marketOnline: {
     url: "https://www.marketonline.me/",
     image: {
-      // Captura del software con los datos de cuentas difuminados.
-      src: "/marketonline-screen.png",
-      width: 1043,
-      height: 720,
+      // Captura del panel de reportes de MarketOnline.
+      src: "/marketonline-dashboard.webp",
+      width: 1491,
+      height: 971,
     },
   },
 
