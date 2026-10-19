@@ -1,5 +1,6 @@
 import { site } from "@/content/site";
 import type { Dictionary } from "@/content/dictionaries";
+import { CountUp } from "@/components/ui/CountUp";
 import { Section } from "@/components/ui/Section";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { cn } from "@/lib/cn";
@@ -27,7 +28,7 @@ export function Metrics({ metrics }: { metrics: Dictionary["metrics"] }) {
                 dir="ltr"
                 className="text-3xl font-extrabold tracking-[-0.04em] whitespace-nowrap text-primary tabular-nums sm:text-4xl xl:text-5xl rtl:text-end"
               >
-                {metric.value}
+                <CountUp value={metric.value} />
                 {metric.unit && (
                   <span className="ms-1.5 text-base font-bold tracking-normal sm:text-lg">
                     {metric.unit}
