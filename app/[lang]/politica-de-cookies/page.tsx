@@ -25,8 +25,7 @@ export async function generateMetadata({
   };
 }
 
-// TODO: BORRADOR. El texto (en todos los idiomas) está en content/dictionaries/*.ts → cookiePolicy
-// y debe ser revisado por un asesor legal antes de publicar.
+// El texto de la política (en todos los idiomas) está en content/dictionaries/*.ts → cookiePolicy.
 export default async function CookiePolicyPage({
   params,
 }: PageProps<"/[lang]/politica-de-cookies">) {
@@ -44,12 +43,6 @@ export default async function CookiePolicyPage({
       <Navbar lang={lang} nav={dict.nav} homeLabel={dict.common.homeLabel} />
       <main id="contenido" className="flex-1 bg-surface">
         <Container size="prose" className="py-16 sm:py-24">
-          <p
-            role="note"
-            className="mb-10 rounded-card border border-line bg-background p-4 text-sm text-ink-muted"
-          >
-            <strong className="text-ink">{policy.draftLabel}</strong> {policy.draftNote}
-          </p>
           <h1 className="text-4xl font-extrabold tracking-[-0.04em] text-ink sm:text-5xl">
             {policy.title}
           </h1>

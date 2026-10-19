@@ -164,13 +164,9 @@ export const es = {
     reject: "Rechazar",
   },
 
-  // TODO: BORRADOR. La política de cookies (en todos los idiomas) debe ser revisada por un asesor legal.
   cookiePolicy: {
     title: "Política de cookies",
     description: "Cómo LUDENS SA usa cookies y tecnologías similares en su sitio web.",
-    draftLabel: "Borrador:",
-    draftNote:
-      "este texto es una versión preliminar y está pendiente de revisión legal. No constituye asesoramiento jurídico.",
     lastUpdated: "Última actualización",
     intro:
       "En LUDENS SA (en adelante, “Ludens”) usamos cookies y tecnologías similares en este sitio web. Esta política explica qué son, cuáles usamos, para qué y cómo podés aceptarlas, rechazarlas o cambiar tu elección en cualquier momento.",

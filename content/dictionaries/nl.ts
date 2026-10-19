@@ -162,9 +162,6 @@ export const nl: Dictionary = {
   cookiePolicy: {
     title: "Cookiebeleid",
     description: "Hoe LUDENS SA cookies en vergelijkbare technologieën op haar website gebruikt.",
-    draftLabel: "Concept:",
-    draftNote:
-      "deze tekst is een voorlopige versie die nog juridisch moet worden beoordeeld. Het is geen juridisch advies.",
     lastUpdated: "Laatst bijgewerkt",
     intro:
       "LUDENS SA (hierna “Ludens”) gebruikt cookies en vergelijkbare technologieën op deze website. Dit beleid legt uit wat ze zijn, welke we gebruiken, waarvoor, en hoe je ze op elk moment kunt accepteren, weigeren of je keuze kunt wijzigen.",

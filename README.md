@@ -61,6 +61,5 @@ Variables de entorno opcionales: ver `.env.example`.
 - Confirmar paleta final (naranja, verde, carbón; celeste solo en MarketOnline) en `app/globals.css`.
 - Revisión de las traducciones por hablantes nativos (en especial hebreo y la política de cookies).
 - Confirmar email de contacto (`content/site.ts`).
-- Revisión legal de la política de cookies en todos los idiomas (`content/dictionaries/*.ts` → `cookiePolicy`).
 - Configurar Resend para el formulario: verificar el dominio y cargar `RESEND_API_KEY` y `CONTACT_FROM_EMAIL` en Vercel.
 - Revisar las descripciones de servicios (redacción nueva).

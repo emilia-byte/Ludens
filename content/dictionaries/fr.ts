@@ -162,9 +162,6 @@ export const fr: Dictionary = {
   cookiePolicy: {
     title: "Politique de cookies",
     description: "Comment LUDENS SA utilise les cookies et technologies similaires sur son site web.",
-    draftLabel: "Brouillon :",
-    draftNote:
-      "ce texte est une version préliminaire en attente de relecture juridique. Il ne constitue pas un conseil juridique.",
     lastUpdated: "Dernière mise à jour",
     intro:
       "LUDENS SA (ci-après « Ludens ») utilise des cookies et des technologies similaires sur ce site web. Cette politique explique ce qu'ils sont, lesquels nous utilisons, dans quel but, et comment vous pouvez les accepter, les refuser ou modifier votre choix à tout moment.",

@@ -162,9 +162,6 @@ export const de: Dictionary = {
   cookiePolicy: {
     title: "Cookie-Richtlinie",
     description: "Wie LUDENS SA Cookies und ähnliche Technologien auf ihrer Website verwendet.",
-    draftLabel: "Entwurf:",
-    draftNote:
-      "Dieser Text ist eine vorläufige Fassung und muss noch rechtlich geprüft werden. Er stellt keine Rechtsberatung dar.",
     lastUpdated: "Zuletzt aktualisiert",
     intro:
       "LUDENS SA (im Folgenden „Ludens“) verwendet auf dieser Website Cookies und ähnliche Technologien. Diese Richtlinie erklärt, was sie sind, welche wir verwenden, wozu, und wie Sie sie jederzeit akzeptieren, ablehnen oder Ihre Auswahl ändern können.",
